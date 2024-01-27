@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900');
+
+body{
+    background-color: #F4F5F5;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 0px 100px 0px 100px;
+
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+}
+
+ul li{
+    text-decoration: none;
+    list-style: none;
+    margin-right: 23px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #3B3D41;
+    font-family: 'inter';
+    font-weight: normal;
+    font-size: 17px;
+}
+
+ul li a:hover{
+    color: #000000;
+    border-bottom: 1px solid #000;
+}
+
+.consultation{
+    background-color: #1B1E20;
+    text-decoration: none;
+    font-family: 'inter';
+    font-size: 16px;
+    border-radius: 4px;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+}
+.hamburger {
+    display: none; /* Initially hide the hamburger icon */
+    cursor: pointer;
+}
+
+.hamburger svg {
+    width: 24px; /* Adjust the width and height as needed */
+    height: 24px;
+    fill: black; /* Change the fill color as needed */
+}
+
+.hamburger svg {
+            width: 24px; /* Adjust the width and height as needed */
+            height: 24px;
+            fill: black; /* Change the fill color as needed */
+        }
+
+/* nav section end */
+
+.worke{
+    padding: 50px 100px 50px 100px;
+
+}
+.titlework{
+    color: var(--primary-text-color);
+    font-family: 'poppins', sans-serif;
+    font-size: 2.488rem;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 70px;
+    margin-top: 0px;
+}
+.imagesofportfolio{
+    display: flex;
+    column-gap: 60px;
+}
+
+
+.imgwork{
+    width: 530px;
+    height: 346px;
+}
+
+/* footer start  */
+
+.footer{
+    padding: 50px 100px 50px 100px;
+}
+
+.element-top{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.links {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.links a{
+    text-decoration: none;
+    color: var(--secondary-text-color);
+/* Text/Regular/Semi Bold */
+    font-family: 'inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+.icons-social{
+    align-items: center;
+    display: flex;
+    gap: 12px;
+}
+
+.icons-social img{
+    width: 24px;
+    height: 24px;
+}
+
+.rights p{
+    text-align: center;
+    color: var(--secondary-text-color);
+    font-family: 'inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 32px;
+}
+
+/* footer end  */
+
+
+
+@media (max-width: 414px) {
+    body{
+        padding: 0px 0px 0px 0px;
+        background-color: #F4F5F5;
+        width: 100%;
+        margin: 0px;
+    }
+    
+    /* NAV SECTION  */
+    .menu {
+        display: none; /* Hide the regular menu on smaller screens */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .navigation {
+        Max-width: 100%;
+        height: 50px;
+        display: flex;
+        padding: 10px 10px 10px 10px;
+        /* flex-direction: column; */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+
+    .menu.active {
+        display: flex; /* Show the menu when the hamburger is clicked */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #f9f9f9;
+        width: 100%;
+        z-index: 1;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        row-gap: 20px;
+    }
+    .menu.active ul{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        row-gap: 20px;
+        text-align: center;
+    }
+
+    .menu.active li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .worke{
+        padding: 20px 10px 20px 10px;
+        max-width: 100%;
+    }
+    
+    .imagesofportfolio{
+        display: flex;
+        column-gap: 60px;
+    }
+    
+    
+    .imgwork{
+        max-width: 100%;
+        height: 250px;
+    }
+
+
+    /* footer section start */
+
+.footer{
+    padding: 25px 10px 25px 10px;
+}
+
+.element-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}
+
+.links {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.links a{
+    text-decoration: none;
+    color: var(--secondary-text-color);
+/* Text/Regular/Semi Bold */
+    font-family: 'inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+.icons-social{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.icons-social img{
+    width: 24px;
+    height: 24px;
+}
+
+.rights p{
+    text-align: center;
+    color: var(--secondary-text-color);
+    font-family: 'inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 32px;
+}
+
+}
+
+
+@media (min-width: 414px) and (max-width: 736px) {
+    body{
+        padding: 0px 0px 0px 0px;
+        background-color: #F4F5F5;
+        width: 100%;
+        margin: 0px;
+    }
+    
+    /* NAV SECTION  */
+    .menu {
+        display: none; /* Hide the regular menu on smaller screens */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .navigation {
+        max-width: 100%;
+        height: 50px;
+        display: flex;
+        padding: 10px 15px 10px 10px;
+        /* flex-direction: column; */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+    .menu.active {
+        display: flex; /* Show the menu when the hamburger is clicked */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #f4f5f5;
+        width: 100%;
+        z-index: 1;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        row-gap: 20px;
+    }
+    .menu.active ul{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        row-gap: 20px;
+        text-align: center;
+    }
+
+    .menu.active li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+
+    /* nav section end */
+
+}
+
+@media (min-width: 1440px){
+
+    body{
+        max-width: 1366px;
+        margin: auto;
+    }
+
+
+}

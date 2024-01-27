@@ -1,0 +1,359 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web design agency in Morocco. We craft Websites For Businesses That Look To Attract High Value Customers and have an online presence. ">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon-logo.svg' %}">
+    <title>Web design agency in Morocco | Webstooone.</title>
+</head>
+<link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+<body>
+    <nav class="navigation">
+        <a href="{% url 'index' %}"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+        <div class="menu">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <a class="consultation" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0">Free 20min consultation</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+        </div>
+    </nav>
+    <section class="hero-section">
+        <div class="left-side">
+            <h1> Web design agency in Morocco.</h1>
+            <h2> Websites For Businesses That Look To Attract High Value Customers.</h2>
+            <p>Our goal is to transform your website into a powerful tool that not only informs but converts potential clients seamlessly.</p>
+            <div class="buttons">
+                <a class="consulltation" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0"> Get your Free 20min Consultation Call</a>
+                <a class="Pricing" href=" #pricingsection ">See Pricing</a>
+            </div>
+        </div>
+        <div class="right-side">
+            <img src="{% static 'images/hero-image.webp' %}" alt="">
+        </div>      
+    </section>
+    <!-- hero section end -->
+    <!-- logo section start-->
+    <section class="social-proof-logo ">
+        <p>May i add you to the list?</p>
+        <div class="logos">
+            <img class="logo1" src="{% static 'images/cagp-logo.svg' %}" alt="cagp logo">
+            <img class="logo2" src="{% static 'images/valorapack-logo.svg' %}" alt="">
+        </div>
+    </section>
+    <!-- logo section end -->
+
+    <!-- paragraphe section start -->
+    <section class="paragraphe">
+        <div class="texte">
+            <h2>Not Converting Potentiel Clients?</h2>
+            <p>Enough of having a poor online presence and not attracting more customers, by doing this you are giving your competitors an advantage.<br>
+                would you rather be?<br>
+                a. A business owner that gets clients throught offline and online, and having your website act as an online hub that can be reached with one click and attracts customers 24/7.<br>
+                b. A business owner that relies on traffic that passes near your location, to hopefully see that you exist. no leads comming in, while your competition is killing it.<br>
+                It’s time to have an online presence and show your work to the world.</p>
+        </div>
+        <div class="calender">
+            <img src="{% static 'images/calender.webp' %}" alt="">
+        </div>
+    </section>
+    <!-- paragraphe section end -->
+
+    <!-- work section start-->
+    <section class="worke">
+        <div>
+            <h2 class="titlework">Our Work</h2>
+        </div>
+
+        <div class="imagesofportfolio">
+            {% for portfolio in portfolios %}
+            {%if forloop.counter <= 2 %}
+                <a href="{% url 'portfoliopage' portfolio.slug %}">
+                    <img class= "imgwork" src="{{portfolio.siteimages.url}}" alt="">
+                </a>
+            {% endif %}
+            {% endfor %}                            
+        </div>
+    </section>
+
+    <!-- work section end -->
+    <!-- why us section start -->
+
+
+    <section class="whyus">
+        <div>
+            <h2 class="titlewhyus">Why Us</h2>
+        </div>
+        <div class="container">
+            <div class="reason">
+                <img src="{% static 'images/vector.svg' %}" alt="">
+                <h3>Understanding Your Needs</h3>
+                <p>To craft an effective website that solves your problem, we need to understand your business first, throught: workshops, Market Analysis.</p>
+            </div>
+            <div class="reason">
+                <img src="{% static 'images/industry.svg' %}" alt="">
+                <h3>The use of Best practices</h3>
+                <p>We guarantee you that your website will meet the industry standards, preventing you from being sued or hacked.</p>
+            </div>
+            <div class="reason">
+                <img src="{% static 'images/communication.svg' %}" alt="">
+                <h3>Communication matters to Us</h3>
+                <p>you will have a dedicated portal to see the progress of work, and not be left in the dark.
+                    Simple terms, no technical jargon!</p>
+            </div>
+            <div class="reason">
+                <img src="{% static 'images/design.svg' %}" alt="">
+                <h3>Simple Designs with a specific goal</h3>
+                <p>Implementing Marketing and Psychology tactics that have been proven to work.</p>
+            </div>
+            
+        </div>
+    </section>
+    <!-- why us section end -->
+    <!-- process section start -->
+    <section class="process">
+        <div>
+            <h2 class="processtitle">How it works</h2>
+        </div>
+        <div class="process-container">
+            <div class="process-child1">
+                <h3>Book</h3>
+                <p>We will start with a 20min call to talk about your business and the goals for your website</p>
+            </div>
+            <div class="process-child2">
+                <h3>Strategy</h3>
+                <p>We will work with you to map how the website will solve your issue and studying your target audience.</p>
+            </div>
+            <div class="process-child2">
+                <h3>Design</h3>
+                <p>We will design the website based on what solves your problem, making it aesthetic at the same time.</p>
+            </div>
+            <div class="process-child1">
+                <h3>Development</h3>
+                <p>We will develop your website with the proper technology that aligns with your use case.</p>
+            </div>
+            <div class="process-child2">
+                <h3>Launch</h3>
+                <p>After the dev and the testing, we will launch your website, giving you all the support you need to use it (videos, guides)</p>
+            </div>
+            <div class="process-child2 call">
+                <h3>Book a Call For Free</h3>
+                <p>Book a 20min call to talk about your business and the goals for your website, and see if we can help.</p>
+                <a class="consultation" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0"> Get your 20min Consultation Call</a>
+            </div>
+        </div>
+    </section>
+    <!-- process section end-->
+    <!-- reminder that i need to make this section dinamic -->
+    <!-- testimony section start-->
+
+    <section class="testimonials">
+        <div class="testimony-title">
+            <h2>What Our Clients Say</h2>
+        </div>
+        <div class="onebyone">
+            <div class="testimony">
+                <p>Very Very good professional work, and a very satisfactory result with a lot of flexibility on our different requests. The site is excellent and so is the exceptional work of Marouan. Highly recommended!!</p>
+                <div class="name-testimony">
+                    <h4 class="name">Raghib</h4>
+                    <h5 class="company">Valorapack</h5>
+                </div>
+            </div>
+            <div class="testimony">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.</p>
+                <div class="name-testimony">
+                    <h4 class="name">Fayssal</h4>
+                    <h5 class="company">Cagpinvest</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- pricing section start -->
+
+    <section id="pricingsection">
+
+        <div class="titlepricing">
+            <h2>Pricing</h2>
+        </div>
+        <div class="blockprice">
+            <!-- lwla  -->
+            <div class="contentprice">
+                <h3>Startup Package</h3>
+                <p class="ideal">Ideal for the Startups that need to have a landing page of an MVP as fast as possible.</p>
+                <p class="price-mad">3000MAD</p>
+                <p class="tag">1 - 2 Weeks</p>
+                <hr class="line">
+                <div class="checkpricewhole">
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>8 Sections</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>2 Hour Strategy Meeting</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Website Strategy & Design Direction PDF</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Website Mock-up in Figma</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Website build in the chosen platform</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>SEO, Mobile optimisation, Accessibility</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Domain connection and Launch</p>
+                    </div>
+                </div>
+                <div class="calltoprice">
+                <a class="consltation" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0"> Get your 20min Consultation Call</a>
+
+                </div>
+            </div>
+            <!-- tanya  -->
+            <div class="contentprice">
+                <h3>Custom Web Design</h3>
+                <p class="ideal">Ideal for businesses that need websites with complexe logic.</p>
+                <p class="tag">4 - 8 Weeks</p>
+                <hr class="line">
+                <div class="checkpricewhole">
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Pages based on the size of the project</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>2 Hour Strategy Meeting</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Website Strategy & Design Direction PDF</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Website Mock-up in Figma</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Website build in the chosen platform</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>SEO, Mobile optimisation, Accessibility</p>
+                    </div>
+                    <div class="checkprice">
+                        <img src="{% static 'images/checkc.svg' %}" alt="check mark">
+                        <p>Domain connection and Launch</p>
+                    </div>
+                </div>
+                <div class="calltoprice">
+                <a class="consltation" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0"> Get your 20min Consultation Call</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- pricing section end -->
+    
+    <!-- faq section start-->
+
+    <section class="faq">
+        <h2>FAQ</h2>
+        <div class="flexfaqE">
+            <div class="faq1">
+                <div class="question">
+                    <h3>Do you offer ongoing maintenance and support after the website is launched?</h3>
+                </div>
+                <div class="answer">
+                    <p>YES, we have an ongoing support of 15 days bug fix. where we fix any issues with that accure in that period.</p>
+                </div>
+            </div>
+            <div class="faq1">
+                <div class="question">
+                    <h3>Are there additional costs for post-launch support?</h3>
+                </div>
+                <div class="answer">
+                    <p>for the first 15 days, No. for the first 15 days there is no cost, after that if you want us to maintain your website we can discuss that in a call.</p>
+                </div>
+            </div>
+            <div class="faq1">
+                <div class="question">
+                    <h3>How much flexibility do we have in customizing the design to our brand and specific needs?</h3>
+                </div>
+                <div class="answer">
+                    <p>it’s totally flexibile, we design the website based on the brand guidelines and your specific needs.</p>
+                </div>
+            </div>
+            <div class="faq1">
+                <div class="question">
+                    <h3>Can you integrate third-party tools or platforms into the website?</h3>
+                </div>
+                <div class="answer">
+                    <p>YES we integrate the neccessary third-party tools or platforms into your website.</p>
+                </div>
+            </div>
+            <div class="faq1">
+                <div class="question">
+                    <h3>Who will own the rights to the website design and content?</h3>
+                </div>
+                <div class="answer">
+                    <p>After we get the last payement, and launch the website we transfer all the rights to you.</p>
+                </div>
+            </div>
+            <div class="faq1">
+                <div class="question">
+                    <h3>What services are included in the quoted price?</h3>
+                </div>
+                <div class="answer">
+                    <p>There are two services, the first one is design and second one is development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- faq section end-->
+
+    <!-- footer section start-->
+    <footer class="footer">
+        <div class="element-top">
+            <a href="{% url 'index' %}"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/marouan-kaboul/">Linkedin</a>
+                <a href="https://www.tiktok.com/@marouan.pat?is_from_webapp=1&sender_device=pc">Tiktok</a>
+            </div>
+            <div class="icons-social">
+                <a href="https://www.linkedin.com/in/marouan-kaboul/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@marouan.pat?is_from_webapp=1&sender_device=pc"><img src="{% static '/images/tiktok-icon.svg'%}" alt="tiktok icon"></a>
+                
+            </div>
+        </div>
+        <div>
+            <hr class="lineS">
+        </div>
+        <div class="rights">
+            <p>Webstooone. All right reserved.</p>
+        </div>
+    </footer>
+
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script defer src="{% static '/js/app.js' %}"></script>
+</body>
+</html>

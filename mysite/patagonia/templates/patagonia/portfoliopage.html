@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/portfoliopage.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon-logo.svg' %}">
+    <meta name="description" content="Web design agency in Morocco. We craft Websites For Businesses That Look To Attract High Value Customers and have an online presence. ">
+
+
+    <title>{{ p.title}}</title>
+</head>
+<body>
+    <!-- nav start  -->
+    <nav class="navigation">
+        <a href="{% url 'index' %}"><img src="{% static 'images/logo-white.svg' %}" alt="Weebstooone Logo"></a>
+        <div class="menu">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <a class="consultation" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0">Free 20min consultation</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+        </div>
+    </nav>
+    <!-- nav end  -->
+    <!-- first section start  -->
+    <section class="firstsection">
+        <div class="firstblock">
+            <h1>{{ p.h1_tag}}</h1>
+            <h2>{{p.title}}</h2>
+            <p> {{p.description}} </p>
+        </div>
+        <div class="secondblock">
+            <p> {{p.duree}} </p>
+            <img src="{{p.designtool.url}}" alt=" design tool" class="designimg">
+            <img src="{{p.devtool.url}}" alt=" Development tool" class="devimg">
+        </div>
+        <div class="button">
+            <a class="cons" href="#tally-open=nrO0lL&tally-layout=modal&tally-width=600&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0">I want a website like this</a>
+            <a class="visit" href="{{p.website}}">Visit The Website</a>
+        </div>
+
+    </section>
+    <!-- second section  -->
+    <!-- slider  -->
+    <section class="secondsection">
+        <!-- <div id="slider">
+            <img class="slide" src="{{p.showone.url}}" alt="slide 1">
+            <img class="slide" src="{{p.showtwo.url}}" alt="slide 2">
+            <img class="slide" src="{{p.showthree.url}}" alt="slide 3">
+            <img class="slide" src="{{p.showfour.url}}" alt="slide 4">
+            <img class="slide" src="{{p.showfive.url}}" alt="slide 4">
+            <img class="slide" src="{{p.showsix.url}}" alt="slide 4">
+            <img class="slide" src="{{p.showseven.url}}" alt="slide 4">
+            <img class="slide" src="{{p.showeight.url}}" alt="slide 4">
+        </div>
+        <div class="arrows">
+            
+            <button onclick="previousSlide()"><img src="{% static 'images/iconmonstr-arrow-left-lined.svg' %}" alt=""></button>
+            <button onclick="nextSlide()"><img  src="{% static 'images/iconmonstr-arrow-right-lined.svg' %}" alt=""></button> -->
+        </div>
+        {% if p.loom_video %}
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;"> <iframe src="{{ p.loom_video }}" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+        {% endif %}
+            
+       
+        <!-- end slider  -->
+        <div class="blockofcontent">
+            <h2>Project Info</h2>
+            <p> {{p.text_info | safe}} </p>
+        </div>
+
+        <!-- call ti action  -->
+        <div class="calltoaction">
+            <img src="{% static '/images/cagpa.png' %}" alt=" my photo">
+            
+            <div class="checklist">
+            <h3>Let’s talk about your website project</h3>
+
+            <div class="global">
+            <div class="total">
+                <div class="checkk">
+                    <img src="{% static '/images/iconmonstr-check-mark-circle-filled.svg'%}" alt="">
+                    <h4>No Pressure</h4>
+                </div>
+                <div class="checkk">
+                    <img src="{% static '/images/iconmonstr-check-mark-circle-filled.svg'%}" alt="">
+                    <h4>Get pricing quote</h4>
+                </div>
+                <div class="checkk">
+                    <img src="{% static '/images/iconmonstr-check-mark-circle-filled.svg'%}" alt="">
+                    <h4>See our work</h4>
+                </div>
+            </div>
+
+                <div class="click">
+                    <a href="#tally-open=nrO0lL&tally-layout=modal&tally-width=400&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=0"> Free 20min consultation</a>
+                </div>
+            </div>   
+            </div>
+        </div>
+    </section>
+
+
+     <!-- footer section start-->
+     <footer class="footer">
+        <div class="element-top">
+            <a href="{% url 'index' %}"><img src="{% static 'images/logo-white.svg' %}" alt="logo"></a>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/marouan-kaboul/">Linkedin</a>
+                <a href="https://www.tiktok.com/@marouan.pat?is_from_webapp=1&sender_device=pc">Tiktok</a>
+            </div>
+            <div class="icons-social">
+                <a href="https://www.linkedin.com/in/marouan-kaboul/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@marouan.pat?is_from_webapp=1&sender_device=pc"><img src="{% static '/images/tiktok-icon-white.svg'%}" alt="tiktok icon"></a>
+                
+            </div>
+        </div>
+        <div>
+            <hr class="lineS">
+        </div>
+        <div class="rights">
+            <p>Webstooone. All right reserved.</p>
+        </div>
+    </footer>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+        slides[currentSlide].style.display = 'none';
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].style.display = 'block';
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide -1);
+        }
+
+    </script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script defer src="{% static '/js/app.js' %}"></script>
+
+</body>
+</html>
